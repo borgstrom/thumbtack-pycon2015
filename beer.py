@@ -23,17 +23,18 @@ def mmmm_beer(line):
     """
     Thanks for the beer mugs Thumbtack
     """
-    digits = line.split()
-    answer = float(digits.pop())
+    original_digits = line.split()
+    answer = float(original_digits.pop())
     digit_ops = [
         ['+', '-', '*', '/']
-        for _ in range(len(digits) - 1)
+        for _ in range(len(original_digits) - 1)
     ]
-    for ops in itertools.product(*digit_ops):
-        op_string = ' '.join(roundrobin(digits, ops))
-        total = float(eval(op_string))
-        if total == answer:
-            return op_string
+    for digits in itertools.permutations(original_digits):
+        for ops in itertools.product(*digit_ops):
+            op_string = ' '.join(roundrobin(digits, ops))
+            total = float(eval(op_string))
+            if total == answer:
+                return op_string
     return 'Invalid'
 
 
