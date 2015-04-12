@@ -29,12 +29,14 @@ def mmmm_beer(line):
         ['+', '-', '*', '/']
         for _ in range(len(original_digits) - 1)
     ]
+    solutions_tried = 0
     for digits in itertools.permutations(original_digits):
         for ops in itertools.product(*digit_ops):
             op_string = ' '.join(roundrobin(digits, ops))
             total = float(eval(op_string))
+            solutions_tried += 1
             if total == answer:
-                return ' '.join([op_string, '=', str(int(answer))])
+                return '{0} = {1}  ({2} solutions tried)'.format(op_string, int(answer), solutions_tried)
     return 'Invalid'
 
 
