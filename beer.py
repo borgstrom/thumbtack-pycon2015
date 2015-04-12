@@ -34,7 +34,7 @@ def mmmm_beer(line):
             op_string = ' '.join(roundrobin(digits, ops))
             total = float(eval(op_string))
             if total == answer:
-                return op_string
+                return ' '.join([op_string, '=', str(int(answer))])
     return 'Invalid'
 
 
