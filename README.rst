@@ -2,7 +2,7 @@ PyCon2015 Thumbtack Beer Mug Challenge
 ======================================
 
 Pass in a string of digits where the last digit is the answer and this will
-determine if there is a possible combination of digits and operations that
+determine if there is a possible combination of digits and operands that
 evaluate to the final answer.
 
 Examples:
