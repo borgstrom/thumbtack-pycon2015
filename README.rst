@@ -7,6 +7,8 @@ evaluate to the final answer.
 
 Examples:
 
+.. code::
+
     ❯❯❯ echo '3 2 1 4 5 6 3' | python3 beer.py 
     3 + 2 + 1 - 4 - 5 + 6 = 3  (21 solutions tried)
 
